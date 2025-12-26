@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Lora } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import AppSidebar from "@/components/AppSidebar";
 import { chapters } from "@/lib/chapters";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,14 +34,16 @@ export default function RootLayout({
   }));
 
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950`}
+        className={`${poppins.variable} ${lora.variable} antialiased bg-[#141413]`}
       >
-        <Sidebar chapters={chapterLinks} />
-        <main className="ml-72 min-h-screen">
-          {children}
-        </main>
+        <div className="flex h-screen w-full">
+          <AppSidebar chapters={chapterLinks} />
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

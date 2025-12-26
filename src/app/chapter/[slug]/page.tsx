@@ -45,7 +45,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   return (
     <div className="max-w-3xl mx-auto px-8 py-12">
       <div className="mb-8">
-        <span className="text-blue-500 text-sm font-medium">
+        <span className="text-[#41B3A3] text-sm font-medium">
           {chapter.number === 0 ? "Introduction" : `Chapter ${chapter.number}`}
         </span>
         <h1 className="text-3xl font-bold text-white mt-2">
@@ -60,7 +60,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
           if (paragraph.startsWith("•") || paragraph.startsWith("-")) {
             return (
-              <p key={index} className="text-gray-300 pl-4 border-l-2 border-blue-500 my-2">
+              <p key={index} className="text-gray-300 pl-4 border-l-2 border-[#41B3A3] my-2">
                 {paragraph}
               </p>
             );

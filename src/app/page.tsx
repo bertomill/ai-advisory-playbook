@@ -21,7 +21,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold text-white mb-4">Start Reading</h2>
         <Link
           href={`/chapter/${chapters[0].slug}`}
-          className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+          className="inline-flex items-center px-6 py-3 bg-[#41B3A3] hover:bg-[#359E8F] text-white font-medium rounded-lg transition-colors"
         >
           Begin with {chapters[0].title}
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ export default function Home() {
               className="block p-4 bg-gray-900 hover:bg-gray-800 rounded-lg transition-colors border border-gray-800"
             >
               <div className="flex items-center">
-                <span className="text-blue-500 font-mono text-sm mr-4">
+                <span className="text-[#41B3A3] font-mono text-sm mr-4">
                   {String(index).padStart(2, '0')}
                 </span>
                 <span className="text-white">{chapter.title}</span>
