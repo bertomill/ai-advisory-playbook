@@ -1,17 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { chapters } from "@/lib/chapters";
 
 export default function Home() {
   return (
     <div className="p-8 max-w-4xl">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold text-white mb-4">
-          Making Your First $1M with AI
-        </h1>
-        <p className="text-xl text-gray-400 mb-6">
-          How to Sell High-Value AI Advisory Offers That Scale to Millions
-        </p>
-        <p className="text-gray-300 leading-relaxed">
+        <div className="flex items-center gap-4 mb-6">
+          <Image
+            src="/logo-icon.svg"
+            alt="AI Advisory Logo"
+            width={56}
+            height={56}
+          />
+          <div>
+            <h1 className="text-4xl font-bold text-white">
+              Making Your First $1M with AI
+            </h1>
+            <p className="text-xl text-[#b0aea5]">
+              The AI Advisory Playbook
+            </p>
+          </div>
+        </div>
+        <p className="text-[#e8e6dc] leading-relaxed">
           This playbook will teach you how to position yourself as a Fractional AI Officer,
           package premium advisory offers, and build a million-dollar AI advisory business.
         </p>
