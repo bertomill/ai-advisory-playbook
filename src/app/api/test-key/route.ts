@@ -12,7 +12,6 @@ export async function GET() {
     const result = await generateText({
       model: anthropic('claude-sonnet-4-20250514'),
       prompt: 'Say "API working" in 2 words',
-      maxTokens: 10,
     });
 
     return new Response(

@@ -1,0 +1,19 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon -->
+  <g transform="translate(0, 8)">
+    <!-- Stylized "A" shape -->
+    <path d="M16 0L32 32H25L22 25H10L7 32H0L16 0Z" fill="#41B3A3"/>
+    <!-- Inner cutout -->
+    <path d="M16 10L20 22H12L16 10Z" fill="#141413"/>
+    <!-- AI dot -->
+    <circle cx="16" cy="16" r="2.5" fill="#faf9f5"/>
+  </g>
+
+  <!-- Text: AI Advisory -->
+  <text x="42" y="30" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="600" fill="#faf9f5">
+    AI Advisory
+  </text>
+
+  <!-- Subtle accent line -->
+  <line x1="42" y1="36" x2="130" y2="36" stroke="#41B3A3" stroke-width="2" opacity="0.6"/>
+</svg>

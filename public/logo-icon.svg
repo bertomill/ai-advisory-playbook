@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized "A" shape representing AI + Advisory + Ascent -->
+  <path d="M16 4L28 28H22L19.5 22H12.5L10 28H4L16 4Z" fill="#41B3A3"/>
+  <!-- Inner triangle cutout -->
+  <path d="M16 12L19 20H13L16 12Z" fill="#141413"/>
+  <!-- Dot representing AI "eye" / intelligence -->
+  <circle cx="16" cy="16" r="2" fill="#faf9f5"/>
+</svg>
