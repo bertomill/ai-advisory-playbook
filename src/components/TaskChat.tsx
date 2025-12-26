@@ -1,7 +1,7 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { IconSend, IconRobot, IconUser } from '@tabler/icons-react';
 import type { Task } from '@/types/roadmap';
 
@@ -11,8 +11,9 @@ interface TaskChatProps {
 
 export default function TaskChat({ task }: TaskChatProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [inputValue, setInputValue] = useState('');
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+  const { messages, append, status } = useChat({
     api: '/api/chat',
     body: {
       taskContext: {
@@ -28,6 +29,15 @@ export default function TaskChat({ task }: TaskChatProps) {
       },
     ],
   });
+
+  const isLoading = status === 'streaming' || status === 'submitted';
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!inputValue.trim() || isLoading) return;
+    append({ role: 'user', content: inputValue.trim() });
+    setInputValue('');
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -95,15 +105,15 @@ export default function TaskChat({ task }: TaskChatProps) {
         <div className="flex gap-2">
           <input
             type="text"
-            value={input ?? ''}
-            onChange={handleInputChange ?? (() => {})}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
             placeholder="Ask for help with this task..."
             className="flex-1 bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-sm text-gray-200
                        placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#41B3A3] focus:border-transparent"
           />
           <button
             type="submit"
-            disabled={isLoading || !input?.trim()}
+            disabled={isLoading || !inputValue.trim()}
             className="px-3 py-2 bg-[#41B3A3] hover:bg-[#359E8F] disabled:bg-gray-700 disabled:cursor-not-allowed
                        rounded-lg transition-colors"
           >
